@@ -1,21 +1,19 @@
-# hubot-greetings
+# hubot-greeting
 
 A hubot script that does the things
 
-See [`src/greetings.coffee`](src/greetings.coffee) for full documentation.
+See [`src/greeting.coffee`](src/greeting.coffee) for full documentation.
 
 ## Installation
 
 In hubot project repo, run:
 
-`npm install hubot-greetings --save`
+`npm install hubot-greeting --save`
 
-Then add **hubot-greetings** to your `external-scripts.json`:
+Then add **hubot-greeting** to your `external-scripts.json`:
 
 ```json
-[
-  "hubot-greetings"
-]
+["hubot-greeting"]
 ```
 
 ## Sample Interaction

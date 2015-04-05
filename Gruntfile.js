@@ -1,6 +1,9 @@
 'use strict';
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
+
+  grunt.loadNpmTasks('grunt-mocha-test');
+  grunt.loadNpmTasks('grunt-release');
 
   grunt.initConfig({
     mochaTest: {
@@ -19,13 +22,17 @@ module.exports = function (grunt) {
       }
     },
     watch: {
-      files: ['Gruntfile.js', 'src/**/*.coffee', 'test/**/*.coffee'],
+      files: ['Gruntfile.js', 'test/**/*.coffee'],
       tasks: ['test']
     }
   });
 
+  grunt.event.on('watch', function(action, filepath, target) {
+    grunt.log.writeln(target + ': ' + filepath + ' has ' + action);
+  });
+
   // load all grunt tasks
-  require('matchdep').filterDev(['grunt-*', '!grunt-cli']).forEach(grunt.loadNpmTasks);
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('test', ['mochaTest']);
   grunt.registerTask('test:watch', ['watch']);

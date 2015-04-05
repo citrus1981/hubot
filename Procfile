@@ -1,1 +1,1 @@
-web: bin/hubot -a slack -r src
+web: bin/hubot -a slack -r ./src
