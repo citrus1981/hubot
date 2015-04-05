@@ -15,11 +15,8 @@
 #   citrus1981 <citrus8119@gmail.com>
 
 module.exports = (robot) ->
-  robot.respond /おはよう/, (res) ->
-    res.reply "おはようございます"
-
-  robot.hear /おはよう/, ->
+  robot.hear /おはよう/, (res) ->
     res.send "おはようございます"
 
-  robot.hear /おつかれ/, ->
-    res.send "お疲れまでした"
+  robot.hear /おつかれ/, (res) ->
+    res.reply "お疲れまでした"
