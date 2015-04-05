@@ -16,7 +16,7 @@
 
 module.exports = (robot) ->
   robot.hear /おはよう/, (res) ->
-    res.send "おはようございます"
+    res.reply "おはようございます"
 
   robot.hear /おつかれ/, (res) ->
     res.reply "お疲れまでした"
